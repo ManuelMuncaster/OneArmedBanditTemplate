@@ -27,7 +27,7 @@ namespace OneArmedBandit
             int reel1Value = randGen.Next(1, 4);
             int reel2Value = randGen.Next(1, 4);
             int reel3Value = randGen.Next(1, 4);
-           
+
             // check value of reel 1 with a switch statement and set appropriate image
 
             switch (reel1Value)
@@ -55,9 +55,9 @@ namespace OneArmedBandit
                     break;
                 case 3:
                     reel2.Image = Properties.Resources._7_100x125;
-                    break; 
+                    break;
             }
-           
+
             // check value of reel 3 with a switch statement and set appropriate image
 
             switch (reel3Value)
@@ -78,23 +78,21 @@ namespace OneArmedBandit
             /// images to each reel. Only continue on after you know this works
             /// --------------------------------------------------------------------
 
-
             // Use compound if statement to check if all reels are equal. 
             // If yes show "winner" statement and add 3 to score.
             // If no show "play again" statement and subtract 1 from score.         
 
-            if (reel1Value == reel2Value && reel3Value ==reel1Value)
+            if (reel1Value == reel2Value && reel3Value == reel1Value)
             {
                 outputLabel.Text = "Winner!!";
-                score = score + 3;
+                score = score + 5;
             }
             else
                 outputLabel.Text = "Play Again!";
-                score = score -1;
-            }
-                    
+            score = score - 1;
 
             // if score has reached 0 display "lose" message and set button enabled property to false
+
             if (score == 0)
             {
                 outputLabel.Text = "You lose!";
@@ -107,3 +105,4 @@ namespace OneArmedBandit
         }
     }
 }
+
