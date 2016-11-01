@@ -83,13 +83,12 @@ namespace OneArmedBandit
             // If yes show "winner" statement and add 3 to score.
             // If no show "play again" statement and subtract 1 from score.         
 
-            if (reel1Value == reel2Value && reel3Value ==reel2Value && reel1Value == reel3Value)
+            if (reel1Value == reel2Value && reel3Value ==reel1Value)
             {
                 outputLabel.Text = "Winner!!";
                 score = score + 3;
             }
-            else if (reel1Value != reel2Value && reel3Value != reel1Value && reel3Value != reel2Value)
-            {
+            else
                 outputLabel.Text = "Play Again!";
                 score = score -1;
             }
